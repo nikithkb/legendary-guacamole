@@ -55,9 +55,11 @@ def register_user(request):
 
     return render(request, "accounts/register.html", {"form": form, "msg": msg, "success": success})
 
-# def stats(request):
-#     msg = None
-#     success = False
+def stats(request):
+    msg = None
+    success = False
 
-#     if request.method == "POST"
-#         form = 
+    if request.method == "POST":
+        form = Statistics(request.POST)
+        if form.is_valid():
+            form.save()
