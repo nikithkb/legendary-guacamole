@@ -235,7 +235,7 @@ blackDashboard = {
         }
       });
     } catch (e) {
-      console.log('Notify library is missing, please make sure you have the notifications library added.');
+      console.log('Notify library is missing, please make sure you have the s library added.');
     }
 
   }
