@@ -58,3 +58,59 @@ class SignUpForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'email', 'password1', 'password2')
+
+
+class Statistics(UserCreationForm):
+    gameid = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Game ID",
+                "class": "form-control"
+            }
+        ))
+    goals = forms.DecimalField(
+        widget=forms.NumberInput(
+            attrs={
+                "placeholder": "Goals",
+                "class": "form-control"
+            }
+        ))
+    assists = forms.DecimalField(
+        widget=forms.NumberInput(
+            attrs={
+                "placeholder": "Assists",
+                "class": "form-control"
+            }
+        ))
+    saves = forms.DecimalField(
+        widget=forms.NumberInput(
+            attrs={
+                "placeholder": "Saves",
+                "class": "form-control"
+            }
+        ))
+    shots = forms.DecimalField(
+        widget=forms.NumberInput(
+            attrs={
+                "placeholder": "Shots",
+                "class": "form-control"
+            }
+        ))
+    mvps = forms.DecimalField(
+        widget=forms.NumberInput(
+            attrs={
+                "placeholder": "MVPs",
+                "class": "form-control"
+            }
+        ))
+    wins = forms.DecimalField(
+        widget=forms.NumberInput(
+            attrs={
+                "placeholder": "Wins",
+                "class": "form-control"
+            }
+        ))
+
+    class Meta:
+        model = User
+        fields = ('gameid', 'goals', 'assists', 'saves', 'shots', 'mvps', 'wins')
