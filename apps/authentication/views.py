@@ -6,7 +6,7 @@ Copyright (c) 2019 - present AppSeed.us
 # Create your views here.
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from .forms import LoginForm, SignUpForm
+from .forms import LoginForm, SignUpForm, Statistics
 
 
 def login_view(request):
@@ -63,3 +63,7 @@ def stats(request):
         form = Statistics(request.POST)
         if form.is_valid():
             form.save()
+    success = True
+    msg = 'Data Added'
+    
+    return render(request, "home/ui-icons.html", {"form": form, "msg" : msg, "success": success})
